@@ -1,0 +1,62 @@
+SetUp Ubuntu Instance:
+
+Install Apache
+
+> sudo apt update
+
+> sudo apt install apache2
+
+> sudo ufw allow 'Apache'
+
+
+Enable Read Write mode
+
+> sudo nano /etc/apache2/apache2.conf
+
+> sudo a2enmod rewrite 
+
+> sudo service apache2 restart
+
+
+Set Default Directory
+
+> sudo nano /etc/apache2/sites-available/000-default.conf
+
+
+Install MySQL
+
+> sudo apt-get install mysql-server
+
+> sudo mysql_secure_installation
+
+> sudo mysql
+
+> SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'deep@harman';
+
+> FLUSH PRIVILEGES;
+
+> SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+> exit
+
+
+Insatll PHP
+
+> sudo apt install php libapache2-mod-php php-mysql
+
+> sudo systemctl restart apache2
+
+> sudo chmod 777 -R /var/www/
+
+
+Install PHP My Admin
+
+> sudo apt update
+
+> sudo apt install phpmyadmin php-mbstring php-gettext
+
+> sudo phpenmod mbstring
+
+> sudo systemctl restart apache2
