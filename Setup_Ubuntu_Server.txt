@@ -60,3 +60,26 @@ Install PHP My Admin
 > sudo phpenmod mbstring
 
 > sudo systemctl restart apache2
+
+
+Install Bit Bucket 
+
+> git --version
+
+> sudo apt-get install git
+
+> git config --global user.name "Harmandeep Singh"
+
+> git config --global user.email "harmansingh0064@gmail.com"
+
+> sudo mkdir /var/www/html/laravel
+
+> cd /var/www/html/laravel
+
+> sudo chmod 777 -R /var/www/
+
+> git init
+
+> git remote add origin <server_URL>
+
+> git clone <server_URL>
