@@ -83,3 +83,5 @@ Install Bit Bucket
 > git remote add origin <server_URL>
 
 > git clone <server_URL>
+
+> git add .
