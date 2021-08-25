@@ -1,0 +1,6 @@
+Setup more secaurity on phpmyadmin
+
+> cd /etc/phpmyadmin
+
+> sudo nano .htpasswd
+
