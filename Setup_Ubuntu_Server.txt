@@ -60,6 +60,8 @@ Insatll PHP
 
 > php -v
 
+> sudo apt-get install php7.3-mysqli
+
 > sudo systemctl restart apache2
 
 > sudo chmod 777 -R /var/www/
@@ -71,11 +73,7 @@ Install PHP My Admin
 
 > sudo apt update
 
-> sudo add-apt-repository ppa:phpmyadmin/ppa
-
-> sudo apt-get update
-
-> sudo apt-get install phpmyadmin
+> sudo apt install phpmyadmin
 
 > sudo phpenmod mbstring
 
