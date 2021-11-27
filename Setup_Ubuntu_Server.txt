@@ -44,8 +44,6 @@ Install MySQL
 
 Insatll PHP
 
-> sudo apt install php libapache2-mod-php php-mysql
-
 > sudo apt-get install php-gettext
 
 > sudo apt-get install php7.4-mbstring
@@ -53,6 +51,11 @@ Insatll PHP
 > sudo systemctl restart apache2
 
 > sudo chmod 777 -R /var/www/
+
+
+Upgrade PHP Version
+
+> sudo apt install php7.3
 
 
 Install PHP My Admin
