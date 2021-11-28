@@ -1,0 +1,9 @@
+Import from command line. 
+
+Upload sql file to location /var/www/html
+
+> mysql -u root -p
+
+> use db_name
+
+> source /var/www/html/backup.sql
