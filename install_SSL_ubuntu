@@ -45,8 +45,8 @@
 <VirtualHost *:443>
     DocumentRoot /var/www/html/app/
     SSLEngine on
-    SSLCertificateFile /var/www/html/ssl/server.crt
-    SSLCertificateKeyFile /var/www/html/ssl/server.key
+    SSLCertificateFile /var/www/ssl/server.crt
+    SSLCertificateKeyFile /var/www/ssl/server.key
 </VirtualHost>
 ######### END #############
 
