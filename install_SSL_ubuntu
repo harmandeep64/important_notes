@@ -14,13 +14,43 @@
 
 > sudo service apache2 restart
 
-> openssl req –new –newkey rsa:2048 –nodes –keyout server.key –out server.csr
-
-> sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /var/www/ssl/server.key -out /var/www/ssl/server.crt
+> sudo openssl req -nodes -newkey rsa:2048 -keyout server.key -out server.csr
 ### CommonName:  domain.com. (exect)
 
 > ls
 
+> sudo nano server.csr (Copy content)
+
 #Login Domain
 
-> 
+> Go to SSL section and open register SSL
+
+> then paste server.crt here
+
+> Verify your hosting by file upload or email
+
+> Now you got your certificate server.crt 
+
+> upload server.crt to /var/www/ssl/
+
+# Setup 443 port
+
+> cd /etc/apache2/sites-available
+
+> sudo cp default-ssl.conf domain.com
+
+> sudo nano domain.com
+
+> Paste below content
+
+######### START #############
+<VirtualHost *:443>
+    DocumentRoot /var/www/html/app/
+    SSLEngine on
+    SSLCertificateFile /var/www/html/ssl/server.crt
+    SSLCertificateKeyFile /var/www/html/ssl/server.key
+</VirtualHost>
+######### END #############
+
+
+
