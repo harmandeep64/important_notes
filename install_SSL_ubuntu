@@ -37,7 +37,7 @@
 
 > cd /etc/apache2/sites-available
 
-> sudo cp default-ssl.conf domain.com
+> sudo cp default-ssl.conf domain.com.conf
 
 > sudo nano domain.com
 
@@ -52,5 +52,10 @@
 </VirtualHost>
 ######### END #############
 
+> sudo a2ensite domain.com.conf
 
+> sudo systemctl reload apache2
 
+> sudo service apache2 restart
+
+> Done
