@@ -37,9 +37,7 @@
 
 > cd /etc/apache2/sites-available
 
-> sudo cp default-ssl.conf domain.com.conf
-
-> sudo nano domain.com
+> sudo nano domain.com.conf
 
 > Paste below content
 
