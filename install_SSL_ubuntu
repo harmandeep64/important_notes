@@ -1,0 +1,26 @@
+# Generate CSR 
+
+> Login to SSH
+
+> cd /var/www
+
+> sudo mkdir ssl
+
+> cd ssl
+
+> sudo a2enmod ssl
+
+> sudo systemctl restart apache2
+
+> sudo service apache2 restart
+
+> openssl req –new –newkey rsa:2048 –nodes –keyout server.key –out server.csr
+
+> sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /var/www/ssl/server.key -out /var/www/ssl/server.crt
+### CommonName:  domain.com. (exect)
+
+> ls
+
+#Login Domain
+
+> 
