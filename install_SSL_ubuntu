@@ -1,4 +1,4 @@
-# Generate CSR 
+# Generate Server Key 
 
 > Login to SSH
 
@@ -14,12 +14,18 @@
 
 > sudo service apache2 restart
 
-> sudo openssl req -nodes -newkey rsa:2048 -keyout server.key -out server.csr
-### CommonName:  domain.com. (exect)
+> openssl genrsa -out key.pem 2048
 
-> ls
+> openssl pkcs8 -topk8 -inform PEM -outform PEM -in key.pem -out key-pkcs8.pem 
+#### only when you want to convert server private key to PKCS#8 format ####
 
-> sudo nano server.csr (Copy content)
+
+# Generate CSR 
+
+> openssl req -new -key key.pem -out request.csr -subj 
+####  CommonName = Domain ####
+
+> sudo nano request.csr (Copy content)
 
 #Login Domain
 
@@ -29,9 +35,21 @@
 
 > Verify your hosting by file upload or email
 
-> Now you got your certificate server.crt 
+> Now you got your certificate certificate.crt  OR certificate.pem
 
-> upload server.crt to /var/www/ssl/
+> CA returns a signed certificate certificate.pem. If it is not yet chained up with CA's certificate (rootCA.crt), you need to manually chain up.
+
+# Generate chain certificate
+
+>>> cat rootCA.crt >> certificate.pem
+                OR
+>>> https://tools.keycdn.com/certificate-chain  >> Paste SSL Certificate provided.
+
+>> save file rootCA.crt
+
+# Upload certificates
+
+> upload certificate.crt  OR certificate.pem and rootCA.crt to /var/www/ssl/
 
 # Setup 443 port
 
@@ -45,8 +63,9 @@
 <VirtualHost *:443>
     DocumentRoot /var/www/html/app/
     SSLEngine on
-    SSLCertificateFile /var/www/ssl/server.crt
-    SSLCertificateKeyFile /var/www/ssl/server.key
+    SSLCertificateFile /var/www/html/ssl/certificate.pem
+    SSLCertificateKeyFile /var/www/html/ssl/key.pem
+    SSLCertificateChainFile /var/www/html/ssl/rootCA.crt
 </VirtualHost>
 ######### END #############
 
