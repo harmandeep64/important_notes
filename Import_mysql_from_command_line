@@ -2,6 +2,8 @@ Import from command line.
 
 Upload sql file to location /var/www/html
 
+> sudo bzip2 -d lifter_life_v2_backup_20_12.sql.bz2
+
 > mysql -u root -p
 
 > use db_name
