@@ -1,0 +1,1 @@
+sudo ip addr add 172.31.30.198/20 dev eth0
