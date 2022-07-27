@@ -27,8 +27,6 @@ Install MySQL
 
 > sudo apt-get install mysql-server
 
-> sudo mysql_secure_installation
-
 > sudo mysql
 
 > SELECT user,authentication_string,plugin,host FROM mysql.user;
@@ -40,6 +38,8 @@ Install MySQL
 > SELECT user,authentication_string,plugin,host FROM mysql.user;
 
 > exit
+
+> sudo mysql_secure_installation
 
 
 Insatll PHP
