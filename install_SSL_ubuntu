@@ -22,7 +22,7 @@
 
 # Generate CSR 
 
-> openssl req -new -key key.pem -out request.csr -subj 
+> openssl req -new -newkey rsa:2048 -nodes -keyout key.pem -out mydomain.csr
 ####  CommonName = Domain ####
 
 > sudo nano request.csr (Copy content)
