@@ -68,7 +68,7 @@ Insatll PHP
 
 > sudo chmod 777 -R /var/www/
 
-> sudo apt-get install php7.3-mbstring
+> sudo apt-get install php8.1-mbstring
 
 
 Install PHP My Admin
