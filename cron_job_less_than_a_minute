@@ -1,0 +1,38 @@
+> nano /var/www/html/cron/custom_script.sh
+
+
+#####################################################
+#!/bin/bash
+
+while true; do
+    php /var/www/html/server/cron_job/ce_script.php
+    sleep 3
+done
+#####################################################
+
+> chmod +x /var/www/html/cron/custom_script.sh
+
+> /var/www/html/cron/custom_script.sh &
+
+
+  -------- Work if system restart ----------------
+
+> sudo nano /etc/systemd/system/custom_script.service
+
+#####################################################
+  [Unit]
+  Description=Custom Script Service
+  
+  [Service]
+  ExecStart=/path/to/custom_script.sh
+  Restart=always
+  User=your_username
+  Group=your_groupname
+  
+  [Install]
+  WantedBy=multi-user.target
+#####################################################
+
+> sudo systemctl enable custom_script.service
+  
+> sudo systemctl start custom_script.service
