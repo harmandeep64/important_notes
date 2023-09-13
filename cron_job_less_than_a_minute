@@ -36,3 +36,9 @@ done
 > sudo systemctl enable custom_script.service
   
 > sudo systemctl start custom_script.service
+
+> sudo systemctl status custom_script.service
+
+
+
+
