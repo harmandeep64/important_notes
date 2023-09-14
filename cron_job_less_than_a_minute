@@ -20,17 +20,17 @@ done
 > sudo nano /etc/systemd/system/custom_script.service
 
 #####################################################
-  [Unit]
-  Description=Custom Script Service
-  
-  [Service]
-  ExecStart=/path/to/custom_script.sh
-  Restart=always
-  User=your_username
-  Group=your_groupname
-  
-  [Install]
-  WantedBy=multi-user.target
+
+[Unit]
+Description=Custom Script for custom_script.sh
+
+[Service]
+ExecStart=/path/to/custom_script.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
 #####################################################
 
 > sudo systemctl enable custom_script.service
